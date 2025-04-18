@@ -1,3 +1,4 @@
+
 #include "../concepts/LinkedList.h"
 #include <iostream>
 
@@ -31,7 +32,6 @@ int binarySearch(Node *head, int target)
   while (left <= right)
   {
     int mid = left + (right - left) / 2;
-
     Node *midNode = positionShifter(head, mid);
 
     if (midNode->data == target)

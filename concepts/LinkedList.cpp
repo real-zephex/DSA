@@ -98,3 +98,15 @@ void printList(Node *head)
   }
   std::cout << "\n";
 }
+
+Node *getNodeAtPosition(Node *head, int position)
+{
+  int pos = 0;
+
+  while (pos < position - 1)
+  {
+    head = head->next;
+    pos++;
+  }
+  return head;
+}
