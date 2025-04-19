@@ -2,29 +2,6 @@
 #include "../concepts/LinkedList.h"
 #include <iostream>
 
-int linkedListSize(Node *head)
-{
-  int counter = 0;
-  while (head != nullptr)
-  {
-    head = head->next;
-    counter++;
-  }
-  return counter;
-};
-
-Node *positionShifter(Node *head, int position)
-{
-  int pos = 0;
-
-  while (pos < position - 1)
-  {
-    head = head->next;
-    pos++;
-  }
-  return head;
-}
-
 int binarySearch(Node *head, int target)
 {
   int size = linkedListSize(head);
@@ -32,7 +9,7 @@ int binarySearch(Node *head, int target)
   while (left <= right)
   {
     int mid = left + (right - left) / 2;
-    Node *midNode = positionShifter(head, mid);
+    Node *midNode = getNodeAtPosition(head, mid);
 
     if (midNode->data == target)
     {

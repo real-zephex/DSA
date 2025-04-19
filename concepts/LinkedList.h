@@ -17,7 +17,9 @@ void insertAtEnd(Node *&head, int data);
 void insertAfter(Node *&head, int data, int position);
 void deleteNode(Node *&head, int position);
 void printList(Node *head);
+void linkedListSort(Node *&head);
 
 Node *getNodeAtPosition(Node *head, int position);
+int linkedListSize(Node *head);
 
 #endif // LINKED_LIST_H

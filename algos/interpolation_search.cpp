@@ -1,39 +1,5 @@
 #include "../concepts/LinkedList.h"
 
-int linkedListSize(Node *head)
-{
-  int counter = 0;
-  while (head != nullptr)
-  {
-    head = head->next;
-    counter++;
-  }
-  return counter;
-};
-
-void linkedListSort(Node *&head)
-{
-  if (head == nullptr || head->next == nullptr)
-    return;
-
-  int size = linkedListSize(head);
-
-  for (int i = 0; i < size; i++)
-  {
-    Node *current = head;
-    for (int j = 0; j < size - i - 1; j++)
-    {
-      if (current->data > current->next->data)
-      {
-        int temp = current->data;
-        current->data = current->next->data;
-        current->next->data = temp;
-      }
-      current = current->next;
-    }
-  }
-}
-
 int interpolationSearch(Node *head, int target)
 {
   linkedListSort(head);
@@ -45,11 +11,9 @@ int interpolationSearch(Node *head, int target)
     Node *leftNode = getNodeAtPosition(head, left);
     Node *rightNode = getNodeAtPosition(head, right);
 
-    // Breaking out of the for loop if either of the left node or right node is null pointer
     if (leftNode == nullptr || rightNode == nullptr)
       break;
 
-    // Breaking out of the while loop if either of the left node or right node is greater than the target
     if (leftNode->data > target || rightNode->data < target)
       return -1;
 

@@ -110,3 +110,37 @@ Node *getNodeAtPosition(Node *head, int position)
   }
   return head;
 }
+
+int linkedListSize(Node *head)
+{
+  int counter = 0;
+  while (head != nullptr)
+  {
+    head = head->next;
+    counter++;
+  }
+  return counter;
+};
+
+void linkedListSort(Node *&head)
+{
+  if (head == nullptr || head->next == nullptr)
+    return;
+
+  int size = linkedListSize(head);
+
+  for (int i = 0; i < size; i++)
+  {
+    Node *current = head;
+    for (int j = 0; j < size - i - 1; j++)
+    {
+      if (current->data > current->next->data)
+      {
+        int temp = current->data;
+        current->data = current->next->data;
+        current->next->data = temp;
+      }
+      current = current->next;
+    }
+  }
+}
