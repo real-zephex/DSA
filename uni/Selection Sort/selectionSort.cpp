@@ -24,11 +24,10 @@ void selectionSort(std::vector<int> &arr)
         key = j;
       }
     }
-    if (key != arr[i])
+    // Swap only if a smaller element is found
+    if (key != i)
     {
-      int temp = arr[i];
-      arr[i] = arr[key];
-      arr[key] = temp;
+      std::swap(arr[i], arr[key]);
     }
   }
 }

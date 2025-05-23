@@ -3,7 +3,7 @@
 #include <iostream>
 #include <vector>
 
-void printArray(std::vector<int> arr)
+void printArray(const std::vector<int> &arr)
 {
   for (int i = 0; i < arr.size(); i++)
   {
@@ -19,6 +19,13 @@ void insertionSort(std::vector<int> &arr)
   {
     int key = arr[i];
     int j = i - 1;
+
+    // Early exit if key is already in correct position
+    if (arr[j] <= key)
+    {
+      arr[j + 1] = key; // No shift needed, just place key
+      continue;
+    }
 
     while (j >= 0 && arr[j] > key)
     {
