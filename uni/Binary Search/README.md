@@ -1,14 +1,25 @@
 # Binary Search
 
-## How Binary Search Works
+Binary Search is an efficient algorithm for finding an item from a sorted list of items. It works by repeatedly dividing in half the portion of the list that could contain the item, until you've narrowed down the possible locations to just one.
 
-Binary search is an efficient algorithm for finding an item from a sorted list of items. It works by repeatedly dividing the portion of the list that could contain the item in half until you've narrowed down the possible locations to just one.
+## How it Works
 
-1. Start with the middle element of the list.
-2. If the middle element is the target, return its position.
-3. If the target is less than the middle element, repeat the process on the left half of the list.
-4. If the target is greater than the middle element, repeat the process on the right half of the list.
-5. Continue this process until the target is found or the sublist is empty.
+1.  Start with the middle element of the sorted array.
+2.  If the target value matches the middle element, return its index.
+3.  If the target value is less than the middle element, search the left half of the array.
+4.  If the target value is greater than the middle element, search the right half of the array.
+5.  Repeat the process until the target value is found or the search interval is empty.
+
+## Complexity
+
+- **Time Complexity:** O(log n) - The search space is halved in each step.
+- **Space Complexity:** O(1) - It uses a constant amount of extra space.
+
+## Best Suited Scenarios
+
+- Searching for an element in a **sorted** array or list.
+- When efficiency is critical for large datasets, provided the data is sorted.
+- Implementing algorithms that require finding a specific value within a range.
 
 ## Benefits of Binary Search
 
