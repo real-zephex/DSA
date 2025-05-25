@@ -1,5 +1,4 @@
-// Insertion Sort Algorithm
-
+// Insertion Sort
 #include <iostream>
 #include <vector>
 #include "..\..\utils\array_utils.h"
@@ -7,17 +6,11 @@
 void insertionSort(std::vector<int> &arr)
 {
   int size = arr.size();
+
   for (int i = 1; i < size; i++)
   {
     int key = arr[i];
     int j = i - 1;
-
-    // Early exit if key is already in correct position
-    if (arr[j] <= key)
-    {
-      arr[j + 1] = key; // No shift needed, just place key
-      continue;
-    }
 
     while (j >= 0 && arr[j] > key)
     {
@@ -31,7 +24,6 @@ void insertionSort(std::vector<int> &arr)
 int main()
 {
   std::vector<int> arr = {10, 9, 20, 19, 12, 30, 12, 1};
-
   std::cout << "Original array: \n";
   printArray(arr);
   std::cout << "\n";
