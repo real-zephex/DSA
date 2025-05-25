@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Merge Sort Visualization</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div class="container">
+    <h1>Merge Sort Visualization</h1>
+    <div class="controls">
+      <div class="algorithm-control">
+        <label for="algorithm">Algorithm:</label>
+        <select id="algorithm">
+          <option value="merge">Merge Sort</option>
+          <option value="quick">Quick Sort</option>
+          <option value="insertion">Insertion Sort</option>
+          <option value="selection">Selection Sort</option>
+        </select>
+      </div>
+      <button id="newArray">Generate New Array</button>
+      <button id="startSort">Start Sorting</button>
+      <div class="speed-control">
+        <label for="speed">Speed:</label>
+        <input type="range" id="speed" min="1" max="100" value="50">
+      </div>
+      <div class="size-control">
+        <label for="size">Array Size:</label>
+        <input type="range" id="size" min="4" max="100" value="30">
+      </div>
+    </div>
+    <div class="array-container" id="array-container"></div>
+    <div class="explanation">
+      <h2 id="algorithmExplanation">How Merge Sort Works</h2>
+      <div id="mergeSort" class="algorithm-explanation">
+        <p>1. Divide the array into two halves until we have single elements</p>
+        <p>2. Compare and merge the smaller arrays back together in sorted order</p>
+        <p>3. Continue merging until we have one fully sorted array</p>
+      </div>
+      <div id="quickSort" class="algorithm-explanation" style="display: none;">
+        <p>1. Choose a pivot element from the array</p>
+        <p>2. Partition the array around the pivot (smaller elements before, larger after)</p>
+        <p>3. Recursively sort the sub-arrays before and after the pivot</p>
+      </div>
+      <div id="insertionSort" class="algorithm-explanation" style="display: none;">
+        <p>1. Start from the second element</p>
+        <p>2. Compare with previous elements and shift them right if greater</p>
+        <p>3. Insert the element in its correct position</p>
+      </div>
+      <div id="selectionSort" class="algorithm-explanation" style="display: none;">
+        <p>1. Find the minimum element in the unsorted portion</p>
+        <p>2. Swap it with the first unsorted element</p>
+        <p>3. Move the boundary of the sorted portion one element right</p>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+
+</html>
