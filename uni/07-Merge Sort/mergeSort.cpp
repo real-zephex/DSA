@@ -76,15 +76,13 @@ void foo(std::vector<int> &arr)
 int main()
 {
   std::vector<int> arr = {5, 2, 8, 3, 9, 7, 6, 1, 4};
-  int size = arr.size();
 
-  std::cout << "Entered array: \n";
-  for (int i = 0; i < size; i++)
-  {
-    std::cout << arr[i] << " ";
-  }
-  std::cout << "\n";
-  foo(arr);
+  std::cout << "Original array: \n";
   printArray(arr);
+  std::cout << "Sorting the array using Merge Sort...\n";
+  foo(arr);
+  std::cout << "Sorted array: \n";
+  printArray(arr);
+
   return 0;
 }

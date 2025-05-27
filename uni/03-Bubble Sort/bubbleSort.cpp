@@ -23,6 +23,10 @@ int main()
 {
   std::vector<int> arr = {64, 34, 25, 12, 22, 11, 90};
 
+  std::cout << "Original array: \n";
+  printArray(arr);
+  std::cout << "Sorting the array using Bubble Sort...\n";
+
   bubbleSort(arr);
   std::cout << "Sorted array: \n";
   printArray(arr);

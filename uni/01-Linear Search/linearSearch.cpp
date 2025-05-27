@@ -26,7 +26,7 @@ int main()
   }
   else
   {
-    std::cout << "Element found at index " << index << ".\n";
+    std::cout << "Element " << lookingFor << " found at index " << index << ".\n";
   }
 
   return 0;

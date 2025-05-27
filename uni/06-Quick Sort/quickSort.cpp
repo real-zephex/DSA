@@ -1,12 +1,8 @@
 // Quick Sort Algorithm
-/*
-  The quick sort algorithm is a divide and conquer algorithm. It works by selecting a pivot element from the array and partitioning the other elements into two sub-arrays, according to whether they are less than or greater than the pivot. The sub-arrays are then sorted recursively.
-
-  The choice of pivot element is crucial for the efficiency of the algorithm. Ideally, the pivot should be the median element, as this will result in balanced partitions. However, finding the median element can be expensive, so a simpler approach is to choose the first or last element as the pivot.
-*/
 
 #include <iostream>
 #include <vector>
+#include "..\..\utils\array_utils.h"
 
 int quickSortPartition(std::vector<int> &arr, int low, int high)
 {
@@ -59,20 +55,13 @@ int main()
   }
 
   std::cout << "Entered array: \n";
-  for (int i = 0; i < size; i++)
-  {
-    std::cout << arr[i] << " ";
-  }
+  printArray(arr);
   std::cout << "\n";
 
   quickSort(arr, 0, size - 1);
 
   std::cout << "Sorted array: \n";
-  for (int i = 0; i < size; i++)
-  {
-    std::cout << arr[i] << " ";
-  }
+  printArray(arr);
   std::cout << "\n";
-
   return 0;
 }
