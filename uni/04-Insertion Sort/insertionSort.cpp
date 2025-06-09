@@ -2,7 +2,7 @@
 
 #include <iostream>
 #include <vector>
-#include "..\..\utils\array_utils.h"
+#include "../../utils/array_utils.h"
 
 void insertionSort(std::vector<int> &arr)
 {
