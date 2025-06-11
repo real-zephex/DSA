@@ -1,17 +1,7 @@
-// Merge Sort Algorithm
+// Merge Sort
 
 #include <iostream>
 #include <vector>
-
-void printArray(std::vector<int> &arr)
-{
-  int size = arr.size();
-  for (int i = 0; i < size; i++)
-  {
-    std::cout << arr[i] << " ";
-  }
-  std::cout << "\n";
-}
 
 void mergeSort(std::vector<int> &arr, std::vector<int> &leftArray, std::vector<int> &rightArray)
 {
@@ -32,10 +22,12 @@ void mergeSort(std::vector<int> &arr, std::vector<int> &leftArray, std::vector<i
     }
     i++;
   }
+
   while (l < leftSize)
   {
     arr[i++] = leftArray[l++];
   }
+
   while (r < rightSize)
   {
     arr[i++] = rightArray[r++];
@@ -45,10 +37,8 @@ void mergeSort(std::vector<int> &arr, std::vector<int> &leftArray, std::vector<i
 void foo(std::vector<int> &arr)
 {
   int length = arr.size();
-  if (length <= 1)
-    return;
-
   int mid = length / 2;
+
   std::vector<int> leftArray, rightArray;
 
   for (int i = 0; i < length; i++)
@@ -62,6 +52,7 @@ void foo(std::vector<int> &arr)
       rightArray.push_back(arr[i]);
     }
   }
+
   foo(leftArray);
   foo(rightArray);
   mergeSort(arr, leftArray, rightArray);
@@ -69,14 +60,4 @@ void foo(std::vector<int> &arr)
 
 int main()
 {
-  std::vector<int> arr = {5, 2, 8, 3, 9, 7, 6, 1, 4};
-
-  std::cout << "Original array: \n";
-  printArray(arr);
-  std::cout << "Sorting the array using Merge Sort...\n";
-  foo(arr);
-  std::cout << "Sorted array: \n";
-  printArray(arr);
-
-  return 0;
 }
